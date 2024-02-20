@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'building'
-                sh 'java --version'
+                sh 'java hello.java'
             }
         }
         stage('Test') {
