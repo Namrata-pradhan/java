@@ -1,0 +1,29 @@
+pipeline {
+    agent { 
+        node {
+            label My_pc
+            }
+      }
+    triggers {
+        pollSCM '* * * * *'
+    }
+     stages {
+        stage('Build') {
+            steps {
+                echo '''Building
+                java --version
+             '''
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing.."
+            }
+        }
+        stage('Deliver') {
+            steps {
+                echo "Delivery.."
+            }
+        }
+    }
+}
